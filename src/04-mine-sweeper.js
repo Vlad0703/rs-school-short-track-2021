@@ -31,4 +31,3 @@ function minesweeper(matrix) {
   return newMatr;
 }
 module.exports = minesweeper;
-  
