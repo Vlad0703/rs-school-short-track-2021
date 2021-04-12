@@ -1,19 +1,19 @@
 function renameFiles(names) {
-  let count = {};
-  for (let i = 0; i < names.length; i++) {
-    if (names.filter(word => word == names[i]).length > 1) {
-      count[names[i]] = names.filter(word => word == names[i]).length - 1;
-      for (let j = names.length - 1; j >= 0; j--) {
-        if (names[i] == names[j] && count[names[i]] > 0) {
-          names[j] += `(${count[names[i]]})`;
-          count[names[i]] -= 1;
+  const coss = names;
+  const count = {};
+  for (let i = 0; i < coss.length; i++) {
+    if (coss.filter((word) => word === coss[i]).length > 1) {
+      count[coss[i]] = coss.filter((word) => word === coss[i]).length - 1;
+      for (let j = coss.length - 1; j >= 0; j--) {
+        if (coss[i] === coss[j] && count[coss[i]] > 0) {
+          coss[j] += `(${count[coss[i]]})`;
+          count[coss[i]] -= 1;
         }
       }
-    } else {
-      continue
     }
   }
-  return names;
-};
+  return coss;
+}
 
 module.exports = renameFiles;
+
