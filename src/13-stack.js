@@ -2,6 +2,7 @@ class Stack {
   constructor () {
     this.stack = [];
   }
+
   push(element) {
     this.stack.push(element);
   }
@@ -11,7 +12,7 @@ class Stack {
   }
 
   peek() {
-    return this.stack[this.stack.length - 1]
+    return this.stack[this.stack.length - 1];
   }
 }
 

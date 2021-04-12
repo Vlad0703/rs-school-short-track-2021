@@ -1,5 +1,5 @@
 function getEmailDomain(email) {
-  let arr = email.split('@');
+  const arr = email.split('@');
   return arr[arr.length - 1];
 }
 
