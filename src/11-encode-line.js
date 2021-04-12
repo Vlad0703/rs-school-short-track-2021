@@ -1,19 +1,20 @@
 function encodeLine(str) {
   let fin = '';
-  let alph = {};
-  let arr = str.split('');
+  const alph = {};
+  const arr = str.split('');
   for (let i = 0; i < arr.length; i++) {
-    if (alph.hasOwnProperty(arr[i])) {
-      alph[arr[i]] += 1;
-    } else {
+    if (typeof alph[arr[i]] === 'undefined') {
       alph[arr[i]] = 1;
+    } else {
+      alph[arr[i]] += 1;
     }
   }
-  for (let prop in alph) {
-    if (alph[prop] > 1) {
-      fin += `${alph[prop]}`+`${prop}`;
+  const en = Object.entries(alph);
+  for (let i = 0; i < en.length; i++) {
+    if (en[i][1] > 1) {
+      fin += `${en[i][1]}${en[i][0]}`;
     } else {
-      fin += `${prop}`;
+      fin += `${en[i][0]}`;
     }
   }
   return fin;
